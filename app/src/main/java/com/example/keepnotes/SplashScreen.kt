@@ -19,7 +19,7 @@ import kotlinx.coroutines.launch
 @SuppressLint("CustomSplashScreen")
 class SplashScreen : AppCompatActivity() {
 
-    val splashDelay: Long = 2000 // Delay in milliseconds
+    val splashDelay: Long = 1500// Delay in milliseconds
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
