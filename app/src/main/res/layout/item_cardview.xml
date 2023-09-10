@@ -21,39 +21,46 @@
             >
 
             <TextView
+                android:id="@+id/notesTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:text="Title"
-                android:maxLines="1"
                 android:fontFamily="@font/roboto_slab_bold"
-                android:textColor="@color/white"/>
+                android:maxLines="1"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
             <TextView
+                android:id="@+id/notesNotes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_mono_medium"
                 android:text="Notes..."
                 android:textColor="@color/text_colour"
-                android:fontFamily="@font/roboto_mono_medium"/>
+                android:textSize="18sp" />
+
             <TextView
+                android:id="@+id/notesDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="22sp"
-                android:maxLines="1"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_slab_bold"
 
-                android:textColor="@color/white"
+                android:maxLines="1"
                 android:text="5 sept 2023"
-                android:fontFamily="@font/roboto_slab_bold"/>
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
+
         <View
+            android:id="@+id/viewPriority"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:background="@drawable/red_dot"
             android:layout_gravity="right"
-            android:layout_margin="10dp" />
+            android:layout_margin="10dp"
+            android:background="@drawable/red_dot" />
     </androidx.cardview.widget.CardView>
 
 

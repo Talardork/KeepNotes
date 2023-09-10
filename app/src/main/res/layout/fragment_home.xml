@@ -11,17 +11,73 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/filterImageView"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:contentDescription="TODO"
+                android:src="@drawable/filter_red" />
+
+            <Button
+                android:id="@+id/filterHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/filter_color_background"
+                android:backgroundTintMode="screen"
+                android:text="High"
+                android:textColor="@color/red_color"
+
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/filterMedium"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/filter_color_background"
+                android:backgroundTintMode="screen"
+                android:text="Medium"
+                android:textColor="@color/yellow_dot"
+
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/filterLow"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/filter_color_background"
+                android:backgroundTintMode="screen"
+                android:text="Low"
+                android:textColor="@color/green_dot"
+
+                android:textSize="15sp" />
+
+
+        </LinearLayout>
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/newNotesButton"
@@ -32,7 +88,8 @@
             android:clickable="true"
             android:src="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="TODO" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

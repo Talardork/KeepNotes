@@ -5,13 +5,12 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.example.keepnotes.Dao.NotesDao
+
 import com.example.keepnotes.Database.NotesDatabase
 import com.example.keepnotes.NotesRepository.NotesRepository
 import com.example.keepnotes.model.Notes
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.coroutineScope
-import kotlinx.coroutines.flow.Flow
+
 import kotlinx.coroutines.launch
 
 class NotesViewModel(application: Application) : AndroidViewModel(application) {
@@ -30,8 +29,8 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
     fun updateNotes(notes : Notes)= viewModelScope.launch(Dispatchers.IO) {
             repository.update(notes)
         }
-    fun deleteNotes(notes : Notes)= viewModelScope.launch(Dispatchers.IO) {
-            repository.delete(notes)
+    fun deleteNotes(id : Int)= viewModelScope.launch(Dispatchers.IO) {
+            repository.delete(id)
         }
 
     fun deleteAllNotes()= viewModelScope.launch(Dispatchers.IO) {
@@ -40,6 +39,9 @@ class NotesViewModel(application: Application) : AndroidViewModel(application) {
 
     fun getAllNotes(): LiveData<List<Notes>> = repository.myAllNotes().asLiveData()
 
+    fun getHighNotes(): LiveData<List<Notes>> = repository.myHighNotes().asLiveData()
+    fun getMediumNotes(): LiveData<List<Notes>> = repository.myMediumNotes().asLiveData()
+    fun getLowNotes(): LiveData<List<Notes>> = repository.myLowNotes().asLiveData()
 
 
 }

@@ -9,4 +9,5 @@
     <color name="green_dot">#11D99B</color>
     <color name="yellow_dot">#D9D92F</color>
     <color name="text_colour">#D1D1D1</color>
+    <color name="filter_color_background">#404040</color>
 </resources>

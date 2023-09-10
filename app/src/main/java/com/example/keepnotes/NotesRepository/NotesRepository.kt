@@ -1,7 +1,8 @@
 package com.example.keepnotes.NotesRepository
 
+import android.util.Log
 import androidx.annotation.WorkerThread
-import androidx.lifecycle.LiveData
+
 import com.example.keepnotes.Dao.NotesDao
 import com.example.keepnotes.model.Notes
 import kotlinx.coroutines.flow.Flow
@@ -9,6 +10,10 @@ import kotlinx.coroutines.flow.Flow
 class NotesRepository(private val notesDao: NotesDao) {
 
     fun myAllNotes(): Flow<List<Notes>> = notesDao.getAllNotes()
+
+    fun myHighNotes(): Flow<List<Notes>> = notesDao.getHighNotes()
+    fun myMediumNotes(): Flow<List<Notes>> = notesDao.getMediumNotes()
+    fun myLowNotes(): Flow<List<Notes>> = notesDao.getLowNotes()
 
 
     @WorkerThread
@@ -30,9 +35,9 @@ class NotesRepository(private val notesDao: NotesDao) {
     }
 
     @WorkerThread
-    suspend fun delete(notes: Notes) {
+    suspend fun delete(id : Int) {
         try {
-            notesDao.deleteNotes(notes)
+            notesDao.deleteNotes(id)
         } catch (e: Exception) {
             // Handle the exception, e.g., log or notify the user
         }

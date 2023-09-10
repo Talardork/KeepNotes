@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.keepnotes.ui.Fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="Keep Notes"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_editNotesFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/createNotesFragment"
         android:name="com.example.keepnotes.ui.Fragments.CreateNotesFragment"
-        android:label="fragment_create_notes"
+        android:label="Add a new note"
         tools:layout="@layout/fragment_create_notes" >
         <action
             android:id="@+id/action_createNotesFragment_to_homeFragment"
@@ -29,10 +29,13 @@
     <fragment
         android:id="@+id/editNotesFragment"
         android:name="com.example.keepnotes.ui.Fragments.EditNotesFragment"
-        android:label="fragment_edit_notes"
+        android:label="Edit your notes"
         tools:layout="@layout/fragment_edit_notes" >
         <action
             android:id="@+id/action_editNotesFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="data"
+            app:argType="com.example.keepnotes.model.Notes" />
     </fragment>
 </navigation>

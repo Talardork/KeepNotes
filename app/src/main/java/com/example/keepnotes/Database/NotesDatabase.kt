@@ -11,7 +11,7 @@ import com.example.keepnotes.model.Notes
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-@Database(entities = [Notes::class], version = 1)
+@Database(entities = [Notes::class], version = 1, exportSchema = false)
 abstract class NotesDatabase : RoomDatabase(){
     //database must be an abstract class
 
@@ -41,22 +41,22 @@ abstract class NotesDatabase : RoomDatabase(){
         }
 
     }
-    private class NotesDatabaseCallback(private val scope: CoroutineScope) : RoomDatabase.Callback(){
-        override fun onCreate(db: SupportSQLiteDatabase) {
-            super.onCreate(db)
-            INSTANCE ?. let { database ->
-                //when instance is not null, this code will work.
-                //database.myNotesDao().insertNotes("t")
-
-                scope.launch {
-                    val notesDao = database.myNotesDao()
-
-                    notesDao.insertNotes(Notes("Title","subtitle","hasnksan","6 sept 2023",
-                        ""))
-
-                }
-
-            }
-        }
-    }
+//    private class NotesDatabaseCallback(private val scope: CoroutineScope) : RoomDatabase.Callback(){
+//        override fun onCreate(db: SupportSQLiteDatabase) {
+//            super.onCreate(db)
+//            INSTANCE ?. let { database ->
+//                //when instance is not null, this code will work.
+//                //database.myNotesDao().insertNotes("t")
+//
+//                scope.launch {
+//                    val notesDao = database.myNotesDao()
+//
+//                    notesDao.insertNotes(Notes("Title","subtitle","hasnksan","6 sept 2023",
+//                        "3"))
+//
+//                }
+//
+//            }
+//        }
+//    }
 }

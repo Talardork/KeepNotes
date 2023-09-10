@@ -26,32 +26,35 @@
         android:gravity="center"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:id="@+id/dialog_yes"
+        android:layout_width="300dp"
         android:layout_height="40dp"
-        android:text="Yes"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/yes_button"
-        android:layout_marginEnd="10dp"
-        android:layout_marginStart="10dp"
         android:fontFamily="@font/roboto_slab_bold"
-
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="No"
-        android:textSize="20sp"
-        android:textColor="@color/white"
         android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/no_button"
-        android:layout_marginEnd="10dp"
+        android:text="Yes"
+        android:textColor="@color/black"
+
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/dialog_no"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
         android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/no_button"
         android:fontFamily="@font/roboto_slab_bold"
-        />
+        android:gravity="center"
+        android:text="No"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 
 </LinearLayout>

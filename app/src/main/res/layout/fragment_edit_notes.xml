@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/editSubtitle"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/editNotes"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/back"
@@ -29,6 +30,7 @@
             android:textSize="24sp" />
 
         <EditText
+            android:id="@+id/editSubTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -108,6 +110,18 @@
         android:clickable="true"
         android:contentDescription="TODO"
         android:src="@drawable/baseline_done_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnDeleteNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:layout_margin="20dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:contentDescription="TODO"
+        android:src="@drawable/delete_white"
+        app:maxImageSize="32dp"/>
 
 
 </FrameLayout>
